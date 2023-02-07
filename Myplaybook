@@ -41,8 +41,7 @@
         - containerd.io
       update_cache: yes
 
-  - name: add userpermissions
-    shell: "usermod -aG docker azureuser"
+
 
   # Installs Docker SDK
   # --
