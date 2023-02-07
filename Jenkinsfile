@@ -1,12 +1,18 @@
 pipeline {
-    agent any
+    agent any 
     stages{
-        stage('Ansible'){
-            steps { 
-                ansiblePlaybook becomeUser: 'jenkins', installation: 'ansible', inventory: './hosts.yml', playbook: 'Myplaybook', credentialsId: 'mykey'
+        stage('Initialize'){
+            steps {
+            
+            sh '''
+             ssh azureuser@20.16.79.71
+            '''
+             
+             
+            
             }
-        }
-        }
+       }
+    }
 }
-
+      
 
