@@ -58,7 +58,7 @@
         - docker-compose
   
   - name: pull image azure
-    become_user: "test4"
+    become_user: "azureuser"
     docker_image:
      name: mongo
      source: pull
