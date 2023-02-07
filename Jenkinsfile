@@ -9,7 +9,7 @@ pipeline {
         }
         stage(" execute Ansible") {
            steps {
-               ansiblePlaybook becomeUser: 'jenkins', credentialsId: 'mykey', installation: 'Ansible', playbook: 'Myplaybook.yml', sudo: true, sudoUser: null
+               Ansible becomeUser: 'jenkins', credentialsId: 'mykey', installation: 'Ansible', playbook: 'Myplaybook.yml', sudo: true, sudoUser: null
             }    
         }    
     }
