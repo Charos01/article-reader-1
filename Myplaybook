@@ -58,3 +58,6 @@
         - docker
         - docker-compose
   
+  - name: pull an image Mongo
+    docker_image:
+      name: Mongo
