@@ -5,7 +5,7 @@ pipeline {
             steps {
             
             sh '''
-            ssh azure
+            ssh-keygen -t rsa -b 4096
             '''
          
             
