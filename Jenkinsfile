@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ("SCM checkout") {
             steps {
-                git "https://github.com/Charos01/article-reader-1.git"
+                git "https://github.com/Charos01/article-reader-1"
                 
             }
         }
