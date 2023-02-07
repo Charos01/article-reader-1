@@ -9,7 +9,7 @@ pipeline {
         }
         stage(" execute Ansible") {
            steps {
-                ansiblePlaybook credentialsId: 'mykey', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'hosts.yml', playbook: 'Myplaybook.yml'
+               ansiblePlaybook becomeUser: 'jenkins', credentialsId: 'mykey', installation: 'Ansible', playbook: 'Myplaybook.yml', sudo: true, sudoUser: null
             }    
         }    
     }
