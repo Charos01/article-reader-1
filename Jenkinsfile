@@ -12,7 +12,7 @@ pipeline {
        }
         stage('Ansible'){
             steps { 
-                ansiblePlaybook become: true, credentialsId: 'mykey', installation: 'Ansible', playbook: 'Myplaybook.yml', sudo: true
+                ansiblePlaybook become: true, credentialsId: 'mykey', installation: 'Ansible', playbook: './Myplaybook.yml', sudo: true
             }
         }
         }
