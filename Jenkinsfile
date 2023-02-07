@@ -7,14 +7,14 @@ pipeline {
             sh '''
             ssh azure
             '''
-             sh '''
-             ansible-playbook Myplaybook
+//              sh '''
+//              ansible-playbook Myplaybook
              
-             '''
-             sh '''
-             whoami
+//              '''
+//              sh '''
+//              whoami
              
-             '''
+//              '''
             
             }
        }
