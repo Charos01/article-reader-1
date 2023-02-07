@@ -11,6 +11,10 @@ pipeline {
                 
             }
         }
+        stage('Ansible'){
+            steps { 
+                 ansiblePlaybook become: true, becomeUser: 'jenkins', colorized: true, credentialsId: 'mykey', installation: 'Ansible', inventory: './hosts.yml', playbook: './Myplaybook.yml', sudo: true
+            }
         
     }
 }
