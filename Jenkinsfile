@@ -7,17 +7,15 @@ pipeline {
             sh '''
              ssh azureuser@20.16.79.71
             '''
+            sh '''
+             ansible-playbook Myplaybook.yml
+            '''
              
              
             
             }
        }
-        stage('Ansible'){
-            steps { 
-                ansiblePlaybook installation: 'ansible', inventory: './hosts.yml', playbook: 'Myplaybook.yml'
-                
-            }
-    }
+      
     }
 }
 
