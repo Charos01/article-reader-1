@@ -10,14 +10,16 @@ pipeline {
              sh '''
              whoami
             '''
-            sh '''
-             ansible-playbook Myplaybook.yml
-            '''
-             
+           
              
             
             }
        }
+         stage('Ansible'){
+            steps { 
+                ansiblePlaybook becomeUser: 'jenkins', installation: 'ansible', inventory: './hosts.yml', playbook: 'docker-playbook.yml', vaultCredentialsId: 'mykey'
+            }
+        }
       
     }
 }
