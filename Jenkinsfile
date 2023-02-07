@@ -6,6 +6,7 @@ pipeline {
             
             sh '''
              ssh azureuser@20.16.79.71
+             ansible-playbook Myplaybook.yml
             '''
              sh '''
              whoami
@@ -15,11 +16,7 @@ pipeline {
             
             }
        }
-         stage('Ansible'){
-            steps { 
-                ansiblePlaybook becomeUser: 'jenkins', installation: 'ansible', inventory: './hosts.yml', playbook: 'Myplaybook.yml',credentialsId: 'mykey'
-            }
-        }
+       
       
     }
 }
