@@ -1,12 +1,6 @@
 pipeline {
     agent any
-     tools {
-        
-         maven 'maven3'
-         jdk 'jdk'
-         dockerTool 'docker'
-         
-         }
+    
     
     stages{
         stage('Initialize'){
