@@ -4,7 +4,7 @@ pipeline {
        
         stage('Ansible'){
             steps { 
-                ansiblePlaybook 'Myplaybook.yml'
+                ansiblePlaybook 'Myplaybook'
             }
         }
         }
