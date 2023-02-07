@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Ansible'){
             steps { 
-                ansiblePlaybook becomeUser: 'azureuser', installation: 'ansible', inventory: './hosts.yml', playbook: 'Myplaybook.yml', credentialsId: 'mykey'
+                ansiblePlaybook becomeUser: 'Jenkins', installation: 'ansible', inventory: './hosts.yml', playbook: 'Myplaybook', credentialsId: 'mykey'
             }
         }
         }
