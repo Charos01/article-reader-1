@@ -17,6 +17,8 @@ pipeline {
                 ansiblePlaybook becomeUser: 'jenkins', installation: 'ansible', inventory: './hosts.yml', playbook: 'Myplaybook'
             }
     }
+    }
 }
+
       
 
