@@ -5,19 +5,17 @@ pipeline {
             steps {
                sshagent(['mykey']) {
                   sh '''
-                    ssh azureuser@20.16.79.71 '''
+                    ssh azureuser@20.16.79.71 
+                    ansible-playbook Myplaybook.yml
+                    '''
 
 }
                 
             }
         }
-        stage('Ansible'){
-            steps { 
-                 ansiblePlaybook become: true, becomeUser: 'jenkins', colorized: true, credentialsId: 'mykey', installation: 'Ansible', inventory: 'hosts.yml', playbook: 'Myplaybook.yml', sudo: true
-            }
+       
         
-    }
-}
+
 }
 
 
