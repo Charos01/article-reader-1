@@ -1,26 +1,26 @@
 - hosts: all
-
+  
   become: yes
-
+ 
   # vars_files:
   #   - vault.yml
   # vars:
   #   cli:
-  #     username:  username
-  #     password:  password
+  #     username:  username 
+  #     password:  password 
 
 
   tasks:
-
+  
   # Install Docker
   # --
-  #
+  # 
   - name: install prerequisites
     apt:
       name:
         - apt-transport-https
-        - ca-certificates
-        - curl
+        - ca-certificates 
+        - curl 
         - gnupg-agent
         - software-properties-common
       update_cache: yes
@@ -32,9 +32,10 @@
   - name: add docker repo
     apt_repository:
       repo: deb https://download.docker.com/linux/ubuntu focal stable
-   - name: install docker
+
+  - name: install docker 
     apt:
-      name:
+      name: 
         - docker-ce
         - docker-ce-cli
         - containerd.io
@@ -45,11 +46,11 @@
 
   # Installs Docker SDK
   # --
-  #
+  # 
   - name: install python package manager
     apt:
       name: python3-pip
-
+  
   - name: install python sdk
     become_user: "azureuser"
     pip:
