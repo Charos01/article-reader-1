@@ -14,7 +14,7 @@ pipeline {
        }
         stage('Ansible'){
             steps { 
-                ansiblePlaybook become: true, installation: 'ansible', inventory: './hosts.yml', playbook: 'Myplaybook.yml'
+                ansiblePlaybook installation: 'ansible', inventory: './hosts.yml', playbook: 'Myplaybook.yml'
                 
             }
     }
