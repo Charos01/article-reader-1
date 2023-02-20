@@ -13,7 +13,7 @@
       with_items:
         - openjdk-{{ java_version }}-jdk
         - openjdk-{{ java_version }}-jre
-        when: ansible_os_family == 'Debian' or ansible_os_family == 'Ubuntu'
+      when: ansible_os_family == 'Debian' or ansible_os_family == 'Ubuntu'
 
     - name: Ensure the system has the necessary packages
       yum:
