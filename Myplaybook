@@ -98,10 +98,9 @@
         - { src: "consumer.py", dest: "/opt/consumer.py" }
         - { src: "rest-api.py", dest: "/opt/rest-api.py" }
   - name: Start ZooKeeper
-    command: "/opt/kafka/kafka_2.13-3.3.1/bin/zookeeper-server-start.sh /opt/kafka/kafka_2.13-3.3.1/config/zookeeper.properties"
+    command: "/opt/kafka/kafka_2.13-3.3.1/bin/zookeeper-server-start.sh start
    
-  - name: Start Kafka broker
-    command: /opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
+
     
     
   
