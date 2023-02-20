@@ -98,8 +98,11 @@
         - { src: "consumer.py", dest: "/opt/consumer.py" }
         - { src: "rest-api.py", dest: "/opt/rest-api.py" }
  
-  - name: Run command if /path/to/database does not exist (without 'args')
-    shell: "/opt/kafka/kafka_2.13-3.3.1/bin/zookeeper-server-start.sh /opt/kafka/kafka_2.13-3.3.1/config/zookeeper.properties
+  - name: Run script with elevated privileges
+    become: yes
+    become_user: root
+    command: /opt/kafka/kafka_2.13-3.3.1/bin/zookeeper-server-start.sh
+
     
   
   
