@@ -3,12 +3,12 @@
   become: yes
 
   vars:
-    java_version: "11"  # Change this to the desired version of Java
+    java_version: "19"  # Change this to the desired version of Java
 
   tasks:
     - name: Download the Java JDK and JRE
       get_url:
-        url: "https://download.java.net/java/GA/jdk{{ java_version }}/openjdk-{{ java_version }}_linux-x64_bin.tar.gz"
+        url: "https://download.oracle.com/java/19/latest/jdk-19_linux-aarch64_bin.tar.gz"
         dest: "/tmp/jdk{{ java_version }}.tar.gz"
 
     - name: Extract the Java JDK and JRE
