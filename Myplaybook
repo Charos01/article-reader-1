@@ -34,6 +34,8 @@
       repo: deb https://download.docker.com/linux/ubuntu focal stable
       
   
+      
+  
 
   - name: install docker 
     apt:
@@ -95,3 +97,9 @@
         - { src: "producer.py", dest: "/opt/producer.py" }
         - { src: "consumer.py", dest: "/opt/consumer.py" }
         - { src: "rest-api.py", dest: "/opt/rest-api.py" }
+  - name: Start ZooKeeper
+    command: "/opt/kafka/kafka_2.13-3.3.1/bin/zookeeper-server-start.sh /opt/kafka/kafka_2.13-3.3.1/config/zookeeper.properties"
+    async: 0
+    poll: 0
+    become: true
+    ignore_errors: yes
