@@ -71,3 +71,11 @@
         state: directory
         mode: '0755'
     become: true
+
+ 
+  - name: Download Kafka binary
+    get_url:
+        url: "https://downloads.apache.org/kafka/3.3.1/kafka_2.13-3.3.1.tgz"
+        dest: "/opt/kafka/kafka_2.13-3.3.1.tgz"
+        mode: '0644'
+    become: true
