@@ -12,7 +12,8 @@ pipeline {
 }
                 
             }
-       } stage ("Run zookeeper") {
+        }
+        stage ("checkout") {
             steps {
                sshagent(['mykey']) {
                   sh '''
