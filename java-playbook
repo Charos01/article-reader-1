@@ -6,24 +6,6 @@
     java_version: "11"  # Change this to the desired version of Java
 
   tasks:
-    - name: Ensure the system has the necessary packages
-      apt:
-        name: "{{ item }}"
-        state: present
-      with_items:
-        - openjdk-{{ java_version }}-jdk
-        - openjdk-{{ java_version }}-jre
-     
-
-    - name: Ensure the system has the necessary packages
-      yum:
-        name: "{{ item }}"
-        state: present
-      with_items:
-        - java-{{ java_version }}-openjdk-devel
-        - java-{{ java_version }}-openjdk
-      
-
     - name: Download the Java JDK and JRE
       get_url:
         url: "https://download.java.net/java/GA/jdk{{ java_version }}/openjdk-{{ java_version }}_linux-x64_bin.tar.gz"
