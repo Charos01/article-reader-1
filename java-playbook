@@ -1,0 +1,49 @@
+- name: Download and Install Java JDK and JRE
+  hosts: all
+  become: yes
+
+  vars:
+    java_version: "11"  # Change this to the desired version of Java
+
+  tasks:
+    - name: Ensure the system has the necessary packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - openjdk-{{ java_version }}-jdk
+        - openjdk-{{ java_version }}-jre
+        when: ansible_os_family == 'Debian' or ansible_os_family == 'Ubuntu'
+
+    - name: Ensure the system has the necessary packages
+      yum:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - java-{{ java_version }}-openjdk-devel
+        - java-{{ java_version }}-openjdk
+        when: ansible_os_family == 'RedHat'
+
+    - name: Download the Java JDK and JRE
+      get_url:
+        url: "https://download.java.net/java/GA/jdk{{ java_version }}/openjdk-{{ java_version }}_linux-x64_bin.tar.gz"
+        dest: "/tmp/jdk{{ java_version }}.tar.gz"
+
+    - name: Extract the Java JDK and JRE
+      unarchive:
+        src: "/tmp/jdk{{ java_version }}.tar.gz"
+        dest: "/usr/lib/jvm"
+        remote_src: yes
+        copy: no
+        creates: "/usr/lib/jvm/jdk-{{ java_version }}"
+
+    - name: Set the Java environment variables
+      blockinfile:
+        path: /etc/environment
+        block: |
+          JAVA_HOME="/usr/lib/jvm/jdk-{{ java_version }}"
+          PATH="$PATH:$JAVA_HOME/bin"
+        insertbefore: EOF
+
+    - name: Load the new environment variables
+      shell: source /etc/environment
