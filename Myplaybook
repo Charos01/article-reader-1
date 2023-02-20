@@ -32,6 +32,8 @@
   - name: add docker repo
     apt_repository:
       repo: deb https://download.docker.com/linux/ubuntu focal stable
+      
+  
 
   - name: install docker 
     apt:
@@ -62,3 +64,10 @@
     docker_image:
      name: mongo
      source: pull
+ 
+  - name: Create Kafka directory
+      file:
+        path: /opt/kafka
+        state: directory
+        mode: '0755'
+      become: true
