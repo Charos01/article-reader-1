@@ -128,5 +128,5 @@
   
   - name: install Java JRE rpm from a local file
     yum:
-    name: /opt/jre
+      name: /opt/jre
     state: present  
