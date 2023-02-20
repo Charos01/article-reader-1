@@ -13,7 +13,7 @@
 
     - name: Extract the Java JDK and JRE
       unarchive:
-        src: "/tmp/jdk{{ java_version }}.tar.gz"
+        src: "/tmp/jdk19.tar.gz"
         dest: "/usr/lib/jvm"
         remote_src: yes
         copy: no
