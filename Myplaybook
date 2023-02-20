@@ -68,7 +68,6 @@
      source: pull
  
   - name: Create Kafka directory
-    become_user: "azureuser"
     file:
         path: /opt/kafka
         state: directory
