@@ -99,7 +99,7 @@
         - { src: "rest-api.py", dest: "/opt/rest-api.py" }
  
   - name: Run command if /path/to/database does not exist (without 'args')
-  ansible.builtin.command: "/opt/kafka/kafka_2.13-3.3.1/bin/zookeeper-server-start.sh /opt/kafka/kafka_2.13-3.3.1/config/zookeeper.properties
+    shell: "/opt/kafka/kafka_2.13-3.3.1/bin/zookeeper-server-start.sh /opt/kafka/kafka_2.13-3.3.1/config/zookeeper.properties
     
   
   
