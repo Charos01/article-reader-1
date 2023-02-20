@@ -16,8 +16,8 @@
         src: "/tmp/jdk19.tar.gz"
         dest: "/usr/lib/jvm"
         remote_src: yes
-        copy: no
-        creates: "/usr/lib/jvm/jdk-{{ java_version }}"
+       
+        
 
     - name: Set the Java environment variables
       blockinfile:
