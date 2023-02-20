@@ -5,7 +5,7 @@ pipeline {
             steps {
                sshagent(['mykey']) {
                   sh '''
-                    ssh azureuser@20.16.79.71 
+                    ssh azureuser@20.251.50.253 
                     ansible-playbook Myplaybook
                     '''
 
