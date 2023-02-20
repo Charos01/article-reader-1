@@ -127,6 +127,6 @@
     become: true
   
   - name: install Java JRE rpm from a local file
-    yum:
+    apt:
       name: /opt/jre
     state: present  
