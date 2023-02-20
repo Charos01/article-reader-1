@@ -6,7 +6,7 @@ pipeline {
                sshagent(['mykey']) {
                   sh '''
                     ssh azureuser@20.16.79.71 
-                    ansible-playbook java-playbook
+                    ansible-playbook Myplaybook
                     '''
 
 }
