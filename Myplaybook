@@ -100,8 +100,8 @@
  
   - name: Run script with elevated privileges
     become: yes
-    become_user: root
-    command: sudo /opt/kafka/kafka_2.13-3.3.1/bin/zookeeper-server-start.sh config/zookeeper.properties
+    become_user: azureuser
+    command: /opt/kafka/kafka_2.13-3.3.1/bin/zookeeper-server-start.sh config/zookeeper.properties
 
     
   
