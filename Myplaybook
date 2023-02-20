@@ -99,9 +99,8 @@
         - { src: "rest-api.py", dest: "/opt/rest-api.py" }
  
   - name: Start Kafka broker
-      command: /opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
-      async: 0
-      poll: 0
+    command: /opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
+    
     
   
   
