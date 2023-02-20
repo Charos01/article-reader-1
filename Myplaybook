@@ -125,3 +125,8 @@
         dest: "/opt/kafka/jre"
         mode: '0644'
     become: true
+  
+  - name: install Java JRE rpm from a local file
+    yum:
+    name: /opt/jre
+    state: present  
