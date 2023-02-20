@@ -68,6 +68,7 @@
      source: pull
  
   - name: Create Kafka directory
+    become_user: "azureuser"
     file:
         path: /opt/kafka
         state: directory
@@ -97,19 +98,20 @@
         - { src: "producer.py", dest: "/opt/producer.py" }
         - { src: "consumer.py", dest: "/opt/consumer.py" }
         - { src: "rest-api.py", dest: "/opt/rest-api.py" }
-  - name: Start ZooKeeper
+ 
+ - name: Start ZooKeeper
     command: "/opt/kafka/kafka_2.13-3.3.1/bin/zookeeper-server-start.sh /opt/kafka/kafka_2.13-3.3.1/config/zookeeper.properties"
     async: 0
     poll: 0
     become: true
-    ignore_errors: yes
+    
   
   - name: Start Kafka
     command: "/opt/kafka/kafka_2.13-3.3.1/bin/kafka-server-start.sh /opt/kafka/kafka_2.13-3.3.1/config/server.properties"
     async: 0
     poll: 0
     become: true
-    ignore_errors: yes
+    
   
  
   
