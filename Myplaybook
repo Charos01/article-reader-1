@@ -79,3 +79,10 @@
         dest: "/opt/kafka/kafka_2.13-3.3.1.tgz"
         mode: '0644'
     become: true
+  
+   - name: Extract Kafka binary
+     unarchive:
+        src: "/opt/kafka/kafka_2.13-3.3.1.tgz"
+        dest: "/opt/kafka"
+        remote_src: true
+     become: true
