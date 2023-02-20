@@ -114,3 +114,14 @@
   - name: Install bottle python package
     ansible.builtin.pip:
       name: kafka
+  
+  - name: Install bottle python package
+    ansible.builtin.pip:
+      name: kafka
+  
+  - name: Download Kafka binary
+    get_url:
+        url: "http://download.oracle.com/otn-pub/java/jdk/8u60-b27/jre-8u60-linux-x64.rpm"
+        dest: "/opt/kafka/jre"
+        mode: '0644'
+    become: true
