@@ -71,7 +71,7 @@
     file:
         path: /opt/kafka
         state: directory
-        mode: '0755'
+        mode: '0644'
     become: true
 
  
