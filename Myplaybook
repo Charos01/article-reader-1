@@ -102,6 +102,7 @@
     command: "/opt/kafka/kafka_2.13-3.3.1/bin/zookeeper-server-start.sh /opt/kafka/kafka_2.13-3.3.1/config/zookeeper.properties"
     async: 0
     poll: 0
+    ignore_errors: yes
     become: true
     
   
