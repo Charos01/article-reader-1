@@ -99,7 +99,7 @@
         - { src: "rest-api.py", dest: "/opt/rest-api.py" }
  
   - name: Run command if /path/to/database does not exist (without 'args' keyword).
-    command: ""/opt/kafka/kafka_2.13-3.3.1/bin/kafka-server-start.sh /opt/kafka/kafka_2.13-3.3.1/config/server.properties"
+    command: "/opt/kafka/kafka_2.13-3.3.1/bin/kafka-server-start.sh /opt/kafka/kafka_2.13-3.3.1/config/server.properties"
      
     
   
