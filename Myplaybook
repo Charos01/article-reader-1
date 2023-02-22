@@ -99,14 +99,9 @@
         - { src: "rest-api.py", dest: "/opt/rest-api.py" }
  
  
-  - name: Run command if /path/to/database does not exist (without 'args' keyword).
-    command: "/opt/kafka/kafka_2.13-3.3.1/bin/zookeeper-server-start.sh /opt/kafka/kafka_2.13-3.3.1/config/zookeeper.properties"
-    poll: 5
-    async: 0
-    become: true
-    
-  
-  
+ 
+  - name: Start Zookeeper
+    shell: /opt/kafka/kafka_2.13-3.3.1/bin/zookeeper-server-start.sh /opt/kafka/kafka_2.13-3.3.1/config/zookeeper.properties
   
  
   
