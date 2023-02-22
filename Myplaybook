@@ -100,7 +100,7 @@
  
   - name: Start MongoDB service
     systemd:
-      name: mongod
+      name: mongo
       state: started
       enabled: yes
       args:
