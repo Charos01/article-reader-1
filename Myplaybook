@@ -111,7 +111,7 @@
     shell: sudo /opt/kafka/kafka_2.13-3.3.1/bin/zookeeper-server-start.sh /opt/kafka/kafka_2.13-3.3.1/config/zookeeper.properties
   
   - name: Start Kafka
-    shell: sudo /opt/kafka/kafka_2.13-3.3.1/bin/zkafka-server-start.sh /opt/kafka/kafka_2.13-3.3.1/config/server.properties
+    shell: sudo /opt/kafka/kafka_2.13-3.3.1/bin/kafka-server-start.sh /opt/kafka/kafka_2.13-3.3.1/config/server.properties
   
   
   
